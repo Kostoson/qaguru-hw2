@@ -7,7 +7,8 @@ import org.junit.jupiter.api.BeforeAll;
 
 public class BaseClassStudentRegistration {
     @BeforeAll
-    static void beforeeeAll(){
+
+    static void beforeAlll(){
 
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.browserSize = "1920x1080";
