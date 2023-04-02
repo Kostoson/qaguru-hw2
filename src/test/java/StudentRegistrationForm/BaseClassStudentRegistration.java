@@ -7,6 +7,7 @@ import org.junit.jupiter.api.BeforeAll;
 
 public class BaseClassStudentRegistration {
     @BeforeAll
+
     static void beforeAlll(){
 
         Configuration.baseUrl = "https://demoqa.com";
