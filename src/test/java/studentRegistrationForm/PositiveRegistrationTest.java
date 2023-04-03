@@ -23,8 +23,8 @@ public class PositiveRegistrationTest extends BaseClassStudentRegistration{
     $("#dateOfBirthInput").sendKeys("01.01.1995");
     $("#dateOfBirthInput").pressEnter();
     $("#subjectsContainer input").setValue("Maths").pressEnter();
-    $("#hobbiesWrapper").$(byText("Sport")).click();
-    $("#uploadPicture").uploadFromClasspath("images/im.png");
+    $("#hobbies-checkbox-1").parent().click();
+    $("#uploadPicture").uploadFromClasspath("im.png");
     $("#currentAddress").setValue("Test");
     $("#state").click();
     $("#stateCity-wrapper").$(byText("NCR")).click();
@@ -32,7 +32,7 @@ public class PositiveRegistrationTest extends BaseClassStudentRegistration{
     $("#stateCity-wrapper").$(byText("Delhi")).click();
     $("#submit").click();
 
-    $("#table-responsive").shouldHave(text("Kostos Dubinin"),
+    $(".table-responsive").shouldHave(text("Kostos Dubinin"),
             text("name@test.ru"),
             text("Kostos Dubinin"),
             text("Male"),
