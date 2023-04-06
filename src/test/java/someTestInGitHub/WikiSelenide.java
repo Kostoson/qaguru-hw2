@@ -1,14 +1,13 @@
 package someTestInGitHub;
 
 import com.codeborne.selenide.Configuration;
-
-import org.junit.jupiter.api.Test;
+import org.testng.annotations.Test;
 
 import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.open;
 
-import static com.codeborne.selenide.Selenide.*;
-
-public class TestInGitHub {
+public class WikiSelenide {
 
     @Test
     void sampleCodeTest() {

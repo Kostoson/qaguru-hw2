@@ -1,6 +1,5 @@
 package StudentRegistrationForm;
 
-import com.codeborne.selenide.selector.ByText;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Condition.text;
