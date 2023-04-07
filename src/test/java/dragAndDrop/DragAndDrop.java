@@ -11,8 +11,10 @@ public class DragAndDrop {
     void dragAndDropTest() {
         open("https://the-internet.herokuapp.com/drag_and_drop");
         $("div#column-a").$("header").shouldHave(Condition.text("A"));
+        $("div#column-b").$("header").shouldHave(Condition.text("B"));
         $("div#column-a").dragAndDropTo("div#column-b");
         $("div#column-b").$("header").shouldHave(Condition.text("A"));
+        $("div#column-a").$("header").shouldHave(Condition.text("B"));
 
     }
 
