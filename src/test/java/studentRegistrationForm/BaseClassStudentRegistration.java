@@ -1,4 +1,4 @@
-package StudentRegistrationForm;
+package studentRegistrationForm;
 
 import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeAll;

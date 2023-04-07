@@ -1,4 +1,4 @@
-package StudentRegistrationForm;
+package studentRegistrationForm;
 
 import org.junit.jupiter.api.Test;
 

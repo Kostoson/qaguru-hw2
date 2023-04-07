@@ -6,5 +6,9 @@
     </content>
     <orderEntry type="jdk" jdkName="11" jdkType="JavaSDK" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.seleniumhq.selenium:selenium-api:4.8.1" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: com.codeborne:selenide:6.12.4" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: com.codeborne:selenide-core:6.12.4" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.junit.jupiter:junit-jupiter-api:5.9.2" level="project" />
   </component>
 </module>
