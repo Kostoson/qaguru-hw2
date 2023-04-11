@@ -7,6 +7,7 @@ import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 import static org.openqa.selenium.Keys.CONTROL;
 
+
 public class PositiveRegistrationTest extends BaseClassStudentRegistration {
 
     @Test
@@ -44,7 +45,6 @@ public class PositiveRegistrationTest extends BaseClassStudentRegistration {
                 text("Test"),
                 text("NCR Delhi")
         );
-
 
     }
 }

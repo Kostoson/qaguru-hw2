@@ -22,8 +22,26 @@ public class WikiSelenide {
         // Открыть страницу SoftAssertions
         $(".Layout-main").$("ul").$("li").sibling(5).$("a").click();
         // Проверьте что внутри есть пример кода для JUnit5
-        $("div.Layout-main div.markdown-body h4").sibling(5).
-                shouldHave(text("3. Using JUnit5 extend test class:"));
+        $("div.markdown-body div").sibling(8).$("pre span").sibling(9).shouldHave(text("@"));
+        $("div.markdown-body div").sibling(8).$("pre span").sibling(10).shouldHave(text("Test"));
+        $("div.markdown-body div").sibling(8).$("pre span").sibling(11).shouldHave(text("public"));
+        $("div.markdown-body div").sibling(8).$("pre span").sibling(12).shouldHave(text("void"));
+        $("div.markdown-body div").sibling(8).$("pre span").sibling(13).shouldHave(text("test"));
+        $("div.markdown-body div").sibling(8).$("pre span").sibling(14).shouldHave(text("Configuration"));
+        $("div.markdown-body div").sibling(8).$("pre span").sibling(15).shouldHave(text("assertionMode"));
+        $("div.markdown-body div").sibling(8).$("pre span").sibling(16).shouldHave(text("SOFT"));
+        $("div.markdown-body div").sibling(8).$("pre span").sibling(17).shouldHave(text("open"));
+        $("div.markdown-body div").sibling(8).$("pre span").sibling(18).shouldHave(text("page.html"));
+        $("div.markdown-body div").sibling(8).$("pre span").sibling(19).shouldHave(text("$"));
+        $("div.markdown-body div").sibling(8).$("pre span").sibling(20).shouldHave(text("#first"));
+        $("div.markdown-body div").sibling(8).$("pre span").sibling(21).shouldHave(text("should"));
+        $("div.markdown-body div").sibling(8).$("pre span").sibling(22).shouldHave(text("visible"));
+        $("div.markdown-body div").sibling(8).$("pre span").sibling(23).shouldHave(text("click"));
+        $("div.markdown-body div").sibling(8).$("pre span").sibling(24).shouldHave(text("$"));
+        $("div.markdown-body div").sibling(8).$("pre span").sibling(25).shouldHave(text("#second"));
+        $("div.markdown-body div").sibling(8).$("pre span").sibling(26).shouldHave(text("should"));
+        $("div.markdown-body div").sibling(8).$("pre span").sibling(27).shouldHave(text("visible"));
+        $("div.markdown-body div").sibling(8).$("pre span").sibling(28).shouldHave(text("click"));
 
     }
 
