@@ -27,16 +27,10 @@ public class PositiveRegistrationTest extends BaseClassStudentRegistration {
                 setHobbie("Sports").
                 uploadPicture("im.png").
                 setAddress("Test").
-                stateCity("NCR");
+                setStateCity("NCR").
+                setCity("Delhi").
+                submitButtonClick();
 
-
-
-
-        $("#state").click();
-        $("#stateCity-wrapper").$(byText("NCR")).click();
-        $("#city").click();
-        $("#stateCity-wrapper").$(byText("Delhi")).click();
-        $("#submit").click();
 
         $(".table-responsive").shouldHave(text("Kostos Dubinin"),
                 text("name@test.ru"),

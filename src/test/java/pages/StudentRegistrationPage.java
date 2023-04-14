@@ -26,6 +26,9 @@ public class StudentRegistrationPage {
 
     SelenideElement stateCityClick = $("#state");
     SelenideElement stateCityInput = $("#stateCity-wrapper");
+    SelenideElement cityClick = $("#city");
+    SelenideElement cityInput = $("#stateCity-wrapper");
+    SelenideElement submitButton = $("#submit");
 
 
     public StudentRegistrationPage openPage() {
@@ -70,7 +73,7 @@ public class StudentRegistrationPage {
         return this;
     }
 
-    public StudentRegistrationPage setHobbie (String hobbie) {
+    public StudentRegistrationPage setHobbie(String hobbie) {
         hobbiesInput.$(byText(hobbie)).click();
         return this;
     }
@@ -79,16 +82,29 @@ public class StudentRegistrationPage {
         uploadPicture.uploadFromClasspath(fileName);
         return this;
     }
-    public StudentRegistrationPage setAddress (String address) {
+
+    public StudentRegistrationPage setAddress(String address) {
         addressInput.uploadFromClasspath(address);
         return this;
     }
-    public StudentRegistrationPage stateCity (String city) {
+
+    public StudentRegistrationPage setStateCity(String stateCity) {
         stateCityClick.click();
-        stateCityInput.$(byText(city)).click();
+        stateCityInput.$(byText(stateCity)).click();
         return this;
     }
 
+    public StudentRegistrationPage setCity(String city) {
+        cityClick.click();
+        cityInput.$(byText(city)).click();
+        return this;
+
+    }
+
+    public StudentRegistrationPage submitButtonClick() {
+        submitButton.click();
+        return this;
+    }
 
 
 }
