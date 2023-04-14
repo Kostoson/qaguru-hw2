@@ -1,13 +1,22 @@
 package studentRegistration.pages.components;
 
+import com.codeborne.selenide.SelenideElement;
+
 import static com.codeborne.selenide.Selenide.$;
 
 public class CalendarComponent {
-    public void setDate(String day, String month, String year) {
-        $("#dateOfBirthInput").click();
-        $(".react-datepicker__month-select").selectOption(month);
-        $(".react-datepicker__year-select").selectOption(year);
 
+    SelenideElement dateOfBirthInput = $("#dateOfBirthInput");
+
+    SelenideElement monthInput = $(".react-datepicker__month-select");
+
+    SelenideElement yearInput = $(".react-datepicker__year-select");
+
+
+    public void setDate(String day, String month, String year) {
+        dateOfBirthInput.click();
+        monthInput.selectOption(month);
+        yearInput.selectOption(year);
         String dayOfDateLocator = String.format(".react-datepicker__day--0%s", day);
         $(dayOfDateLocator).click();
     }
