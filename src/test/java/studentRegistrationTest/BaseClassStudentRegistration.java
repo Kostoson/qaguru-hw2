@@ -1,12 +1,15 @@
-package studentRegistrationForm;
+package studentRegistrationTest;
 
 import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeAll;
+import pages.StudentRegistrationPage;
 
 
 public class BaseClassStudentRegistration {
+
+    StudentRegistrationPage studentRegistrationPage = new StudentRegistrationPage();
     @BeforeAll
-    static void beforeAll() {
+     static void beforeAll() {
 
 
         Configuration.baseUrl = "https://demoqa.com";
