@@ -1,4 +1,4 @@
-package someTestInGitHub;
+package gitHubTests;
 
 import com.codeborne.selenide.Configuration;
 import org.testng.annotations.Test;

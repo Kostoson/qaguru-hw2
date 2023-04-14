@@ -1,14 +1,16 @@
-package pages;
+package studentRegistration.pages;
 
 import com.codeborne.selenide.SelenideElement;
-import org.checkerframework.checker.units.qual.C;
-import pages.components.CalendarComponent;
+import studentRegistration.pages.components.CalendarComponent;
+import studentRegistration.pages.components.ResultsModal;
 
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.Selenide.executeJavaScript;
 
 public class StudentRegistrationPage {
+
+    ResultsModal resultsModal = new ResultsModal();
 
     CalendarComponent calendarComponent = new CalendarComponent();
     SelenideElement firstNameInput = $("input#firstName");
@@ -54,7 +56,7 @@ public class StudentRegistrationPage {
     }
 
     public StudentRegistrationPage setGender(String gender) {
-        genderInput.setValue(gender);
+        genderInput.$(byText(gender)).click();
         return this;
     }
 
@@ -69,7 +71,7 @@ public class StudentRegistrationPage {
     }
 
     public StudentRegistrationPage setSubject(String subject) {
-        subjectInput.setValue(subject);
+        subjectInput.setValue(subject).pressEnter();
         return this;
     }
 
@@ -84,7 +86,7 @@ public class StudentRegistrationPage {
     }
 
     public StudentRegistrationPage setAddress(String address) {
-        addressInput.uploadFromClasspath(address);
+        addressInput.setValue(address);
         return this;
     }
 
@@ -103,6 +105,17 @@ public class StudentRegistrationPage {
 
     public StudentRegistrationPage submitButtonClick() {
         submitButton.click();
+        return this;
+    }
+
+    public StudentRegistrationPage verifyRegistrationModalAppear() {
+        resultsModal.modalDialogIsVisible();
+        return this;
+    }
+
+    public StudentRegistrationPage tableVerifyResultAppears (String key, String value) {
+        resultsModal.tableVerifyResultAppears(key, value);
+
         return this;
     }
 
