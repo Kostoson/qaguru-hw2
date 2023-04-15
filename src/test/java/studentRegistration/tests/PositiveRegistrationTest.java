@@ -6,7 +6,7 @@ import studentRegistration.tests.BaseClassStudentRegistration;
 
 public class PositiveRegistrationTest extends BaseClassStudentRegistration {
 
-
+//todo переставить точки в вызовах методов
     @Test
     void positiveFullRegistration() {
 
