@@ -35,6 +35,11 @@ public class StudentRegistrationPage {
 
     public StudentRegistrationPage openPage() {
         open("/automation-practice-form");
+
+        return this;
+    }
+
+    public StudentRegistrationPage closingBanners() {
         executeJavaScript("$('#fixedban').remove()");
         executeJavaScript("$('footer').remove()");
         return this;
@@ -75,8 +80,8 @@ public class StudentRegistrationPage {
         return this;
     }
 
-    public StudentRegistrationPage setHobbie(String hobbie) {
-        hobbiesInput.$(byText(hobbie)).click();
+    public StudentRegistrationPage setHobby(String hobby) {
+        hobbiesInput.$(byText(hobby)).click();
         return this;
     }
 
