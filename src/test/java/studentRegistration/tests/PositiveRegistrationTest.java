@@ -12,6 +12,7 @@ public class PositiveRegistrationTest extends BaseClassStudentRegistration {
 
         studentRegistrationPage.
                 openPage().
+                closingBanners().
                 setFirstName("Kostos").
                 setLastName("Dubinin").
                 setEmail("name@test.ru").
@@ -19,7 +20,7 @@ public class PositiveRegistrationTest extends BaseClassStudentRegistration {
                 setPhoneNumber("7999123445").
                 setBirthdayDate("20", "January", "1995").
                 setSubject("Maths").
-                setHobbie("Sports").
+                setHobby("Sports").
                 uploadPicture("im.png").
                 setAddress("Test").
                 setStateCity("NCR").
