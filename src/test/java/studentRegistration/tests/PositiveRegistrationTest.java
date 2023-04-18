@@ -1,43 +1,62 @@
 package studentRegistration.tests;
 
+import com.github.javafaker.Address;
 import org.junit.jupiter.api.Test;
-import studentRegistration.tests.BaseClassStudentRegistration;
+import studentRegistration.utils.RandomUtil;
 
 
 public class PositiveRegistrationTest extends BaseClassStudentRegistration {
 
-//todo переставить точки в вызовах методов
+
+    RandomUtil randomUtil = new RandomUtil();
+    String firstName = randomUtil.getRandomFirstName(),
+            lastName = randomUtil.getRandomLastName(),
+            email = randomUtil.getRandomEmail(),
+            phoneNumber = randomUtil.getRandomPhoneNumber(10),
+            gender = randomUtil.getRandomGender(),
+            subject = randomUtil.getRandomSubject(),
+            hobby = randomUtil.getRandomHobby(),
+            picture = "im.png",
+            state = randomUtil.getRandomState(),
+            city = randomUtil.getRandomCity(),
+            day = randomUtil.getRandomDay(),
+            month = randomUtil.getRandomMonth(),
+            year = randomUtil.getRandomYear();
+
+    Address address = randomUtil.getRandomAddress();
+
+
     @Test
     void positiveFullRegistration() {
 
-        studentRegistrationPage.
-                openPage().
-                closingBanners().
-                setFirstName("Kostos").
-                setLastName("Dubinin").
-                setEmail("name@test.ru").
-                setGender("Male").
-                setPhoneNumber("7999123445").
-                setBirthdayDate("20", "January", "1995").
-                setSubject("Maths").
-                setHobby("Sports").
-                uploadPicture("im.png").
-                setAddress("Test").
-                setStateCity("NCR").
-                setCity("Delhi").
-                submitButtonClick();
+        studentRegistrationPage
+                .openPage()
+                .closingBanners()
+                .setFirstName(firstName)
+                .setLastName(lastName)
+                .setEmail(email)
+                .setGender(gender)
+                .setPhoneNumber(phoneNumber)
+                .setBirthdayDate(day, month, year)
+                .setSubject(subject)
+                .setHobby(hobby)
+                .uploadPicture(picture)
+                .setAddress(String.valueOf(address))
+                .setStateCity(state)
+                .setCity(city)
+                .submitButtonClick();
 
-        studentRegistrationPage.verifyRegistrationModalAppear().
-                tableVerifyResultAppears("Student Name", "Kostos Dubinin").
-                tableVerifyResultAppears("Student Email", "name@test.ru").
-                tableVerifyResultAppears("Gender", "Male").
-                tableVerifyResultAppears("Mobile", "7999123445").
-                tableVerifyResultAppears("Date of Birth", "20 January,1995").
-                tableVerifyResultAppears("Subjects", "Maths").
-                tableVerifyResultAppears("Hobbies", "Sports").
-                tableVerifyResultAppears("Picture", "im.png").
-                tableVerifyResultAppears("Address", "Test").
-                tableVerifyResultAppears("State and City", "NCR Delhi");
+        studentRegistrationPage.verifyRegistrationModalAppear()
+                .tableVerifyResultAppears("Student Name", firstName + " " + lastName)
+                .tableVerifyResultAppears("Student Email", email)
+                .tableVerifyResultAppears("Gender", gender)
+                .tableVerifyResultAppears("Mobile", phoneNumber)
+                .tableVerifyResultAppears("Date of Birth", day +" " + month + "," + year)
+                .tableVerifyResultAppears("Subjects", subject)
+                .tableVerifyResultAppears("Hobbies", hobby)
+                .tableVerifyResultAppears("Picture", "im.png")
+                .tableVerifyResultAppears("Address", String.valueOf(address))
+                .tableVerifyResultAppears("State and City", state + " " + city);
 
     }
 }
