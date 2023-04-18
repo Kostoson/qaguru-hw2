@@ -13,7 +13,7 @@ public class StudentRegistrationPage {
     ResultsModal resultsModal = new ResultsModal();
 
     CalendarComponent calendarComponent = new CalendarComponent();
-    SelenideElement firstNameInput = $("input#firstName");
+    SelenideElement firstNameInput = $("input#firstName");  // todo объеденить переменные с одним типом данных
     SelenideElement lastNameInput = $("input#lastName");
     SelenideElement emailInput = $("input#userEmail");
     SelenideElement genderInput = $("#genterWrapper");

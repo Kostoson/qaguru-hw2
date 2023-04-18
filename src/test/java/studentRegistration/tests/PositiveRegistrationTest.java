@@ -7,6 +7,7 @@ import studentRegistration.utils.RandomUtil;
 
 public class PositiveRegistrationTest extends BaseClassStudentRegistration {
 
+
     RandomUtil randomUtil = new RandomUtil();
     String firstName = randomUtil.getRandomFirstName(),
             lastName = randomUtil.getRandomLastName(),
