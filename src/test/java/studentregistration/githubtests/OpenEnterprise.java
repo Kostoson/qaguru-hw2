@@ -1,4 +1,8 @@
-package githubtests;
+
+
+
+package studentregistration.githubtests;
+
 
 import com.codeborne.selenide.Selectors;
 

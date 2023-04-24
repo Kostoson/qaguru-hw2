@@ -2,7 +2,7 @@ package studentregistration.tests;
 
 import com.github.javafaker.Address;
 import org.junit.jupiter.api.Test;
-import studentRegistration.utils.RandomUtil;
+import studentregistration.utils.RandomUtil;
 
 
 public class PositiveRegistrationTest extends BaseClassStudentRegistration {
