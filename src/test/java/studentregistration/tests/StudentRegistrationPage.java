@@ -1,8 +1,8 @@
-package studentRegistration.pages;
+package studentregistration.pages;
 
 import com.codeborne.selenide.SelenideElement;
-import studentRegistration.pages.components.CalendarComponent;
-import studentRegistration.pages.components.ResultsModal;
+import studentregistration.pages.components.CalendarComponent;
+import studentregistration.pages.components.ResultsModal;
 
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
