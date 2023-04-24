@@ -1,9 +1,8 @@
-package studentRegistration.tests;
+package studentregistration.tests;
 
 import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeAll;
-import studentRegistration.pages.StudentRegistrationPage;
-import studentRegistration.pages.components.ResultsModal;
+import studentregistration.pages.components.ResultsModal;
 
 
 public class BaseClassStudentRegistration {

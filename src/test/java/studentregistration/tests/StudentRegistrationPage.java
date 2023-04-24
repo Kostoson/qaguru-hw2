@@ -1,4 +1,4 @@
-package studentregistration.pages;
+package studentregistration.tests;
 
 import com.codeborne.selenide.SelenideElement;
 import studentregistration.pages.components.CalendarComponent;

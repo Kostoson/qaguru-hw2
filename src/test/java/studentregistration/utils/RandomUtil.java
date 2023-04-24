@@ -1,4 +1,4 @@
-package studentRegistration.utils;
+package studentregistration.utils;
 
 import com.github.javafaker.Address;
 import com.github.javafaker.Faker;

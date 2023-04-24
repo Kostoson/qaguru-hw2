@@ -1,4 +1,4 @@
-package studentRegistration.pages.components;
+package studentregistration.pages.components;
 
 import com.codeborne.selenide.SelenideElement;
 
