@@ -1,4 +1,4 @@
-package gitHubTests;
+package githubtests;
 
 import com.codeborne.selenide.Selectors;
 

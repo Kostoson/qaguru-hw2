@@ -1,4 +1,4 @@
-package studentRegistration.tests;
+package studentregistration.tests;
 
 import com.github.javafaker.Address;
 import org.junit.jupiter.api.Test;

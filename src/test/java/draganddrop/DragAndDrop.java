@@ -1,4 +1,4 @@
-package dragAndDrop;
+package draganddrop;
 
 import com.codeborne.selenide.Condition;
 import org.junit.jupiter.api.Test;
