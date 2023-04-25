@@ -1,4 +1,6 @@
-package studentregistration.githubtests;
+
+package github;
+
 
 import com.codeborne.selenide.Configuration;
 import org.testng.annotations.Test;

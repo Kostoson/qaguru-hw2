@@ -2,14 +2,16 @@ package studentregistration.tests;
 
 import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeAll;
-import studentregistration.pages.components.ResultsModal;
+
+import studentregistration.components.ResultsModal;
+import studentregistration.pages.StudentRegistrationPage;
 
 
 public class BaseClassStudentRegistration {
 
-    StudentRegistrationPage studentRegistrationPage = new StudentRegistrationPage();
 
-    ResultsModal resultsModal = new ResultsModal();
+
+
 
     @BeforeAll
     static void beforeAll() {

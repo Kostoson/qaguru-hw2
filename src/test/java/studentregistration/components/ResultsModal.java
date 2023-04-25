@@ -1,4 +1,4 @@
-package studentregistration.pages.components;
+package studentregistration.components;
 
 import com.codeborne.selenide.SelenideElement;
 
@@ -8,9 +8,9 @@ import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 
 public class ResultsModal {
-    SelenideElement modalDialog = $(".modal-dialog");
-    SelenideElement headerText = $("#example-modal-sizes-title-lg");
-    SelenideElement tableVerifyResult = $(".table-responsive");
+    SelenideElement modalDialog = $(".modal-dialog"),
+    headerText = $("#example-modal-sizes-title-lg"),
+    tableVerifyResult = $(".table-responsive");
 
 
 

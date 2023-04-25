@@ -30,10 +30,6 @@ public class RandomUtil {
     private static String stateUtil;
 
 
-    private static <T> T getRandomValueFromArray(T[] array) {
-        return array[ThreadLocalRandom.current().nextInt(0, array.length - 1)];
-    }
-
     private static int getRandomInt(int min, int max) {
         return ThreadLocalRandom.current().nextInt(min, max);
     }
@@ -50,8 +46,8 @@ public class RandomUtil {
         return faker.internet().emailAddress();
     }
 
-    public Address getRandomAddress() {
-        return faker.address();
+    public String getRandomAddress() {
+        return faker.address().fullAddress();
     }
 
     public String getRandomPhoneNumber(int phoneNumberLength) {
@@ -69,7 +65,7 @@ public class RandomUtil {
     }
 
     public  String getRandomMonth() {
-        return getRandomValueFromArray(months);
+        return faker.options().option(months);
     }
 
     public  String getRandomYear() {
@@ -78,25 +74,25 @@ public class RandomUtil {
 
 
     public String getRandomGender() {
-        return getRandomValueFromArray(gender);
+        return faker.options().option(gender);
     }
 
     public String getRandomSubject() {
-        return getRandomValueFromArray(subject);
+        return faker.options().option(subject);
     }
 
     public String getRandomHobby() {
-        return getRandomValueFromArray(hobby);
+        return faker.options().option(hobby);
     }
 
     public String getRandomState() {
-        stateUtil = getRandomValueFromArray(states);
+        stateUtil = faker.options().option(states);
         return stateUtil;
     }
 
     public String getRandomCity() {
         String[] cities = statesAndCities.get(stateUtil);
-        return getRandomValueFromArray(cities);
+        return faker.options().option(cities);
     }
 
 

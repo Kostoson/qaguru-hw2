@@ -2,10 +2,12 @@ package studentregistration.tests;
 
 import com.github.javafaker.Address;
 import org.junit.jupiter.api.Test;
+import studentregistration.pages.StudentRegistrationPage;
 import studentregistration.utils.RandomUtil;
 
 
 public class PositiveRegistrationTest extends BaseClassStudentRegistration {
+    StudentRegistrationPage studentRegistrationPage = new StudentRegistrationPage();
 
 
     RandomUtil randomUtil = new RandomUtil();
@@ -21,9 +23,9 @@ public class PositiveRegistrationTest extends BaseClassStudentRegistration {
             city = randomUtil.getRandomCity(),
             day = randomUtil.getRandomDay(),
             month = randomUtil.getRandomMonth(),
-            year = randomUtil.getRandomYear();
+            year = randomUtil.getRandomYear(),
+            address = randomUtil.getRandomAddress();
 
-    Address address = randomUtil.getRandomAddress();
 
 
     @Test
