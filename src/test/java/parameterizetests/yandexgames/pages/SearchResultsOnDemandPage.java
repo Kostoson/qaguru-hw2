@@ -1,4 +1,4 @@
-package parameterizetests.pages;
+package parameterizetests.yandexgames.pages;
 
 import com.codeborne.selenide.SelenideElement;
 
