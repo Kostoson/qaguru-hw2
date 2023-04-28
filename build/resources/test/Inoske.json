@@ -1,0 +1,10 @@
+{
+  "breed": "bullterier",
+  "name": "Inoske",
+  "age": 1,
+  "owners": ["Kostya", "Alina"],
+  "isGoodBoy": true,
+  "appearance": {
+    "ears": "long",
+    "nose": "grunting"}
+}
