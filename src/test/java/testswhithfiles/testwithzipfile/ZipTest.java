@@ -1,5 +1,6 @@
 package testswhithfiles.testwithzipfile;
 import com.codeborne.pdftest.PDF;
+import com.codeborne.xlstest.XLS;
 import com.opencsv.CSVReader;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
@@ -18,6 +19,8 @@ public class ZipTest {
     {"Note", "23", "Death"},
     {"Apple", "8", "Denis"}
 };
+
+    private static final String XLSX = "value 3";
     ClassLoader classLoader = ZipTest.class.getClassLoader();
 
     @DisplayName("Проверяем содержимое pdf-файла из zip-архива")
@@ -55,6 +58,28 @@ public class ZipTest {
 
             }
 
+        }
+    }
+
+
+
+    @DisplayName("Проверяем содержимое xlsx-файла из zip-архива")
+    @Test
+    void zipXlsTest() throws Exception {
+
+        try (InputStream is = classLoader.getResourceAsStream("test.zip")) {
+            ZipInputStream zis = new ZipInputStream(is);
+            ZipEntry entry;
+            while ((entry = zis.getNextEntry()) != null) {
+                if (entry.getName().contains("xlsx")) {
+                    XLS xls = new XLS(zis);
+                    Assertions.assertEquals(XLSX,
+                            xls.excel.getSheetAt(0)
+                                    .getRow(2)
+                                    .getCell(1)
+                                    .getStringCellValue());
+                }
+            }
         }
     }
 
