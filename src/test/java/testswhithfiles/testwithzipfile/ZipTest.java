@@ -26,7 +26,7 @@ public class ZipTest {
     @DisplayName("Проверяем содержимое pdf-файла из zip-архива")
     @Test
     void zipPdfTest() throws Exception {
-        try (InputStream is = classLoader.getResourceAsStream("test.zip");
+        try (InputStream is = classLoader.getResourceAsStream("Test.zip");
              ZipInputStream zipInputStream = new ZipInputStream(is)) {
             ZipEntry zipEntry;
             while((zipEntry = zipInputStream.getNextEntry()) != null){          // выполняется, пока все файлы из zip-архива не будут прочитаны
@@ -43,7 +43,7 @@ public class ZipTest {
     @DisplayName("Проверяем содержимое csv-файла из zip-архива")
     @Test
     void zipCsvTest() throws Exception {
-        try (InputStream is = classLoader.getResourceAsStream("test.zip");
+        try (InputStream is = classLoader.getResourceAsStream("Test.zip");
              ZipInputStream zipInputStream = new ZipInputStream(is)) {
             ZipEntry zipEntry;
             while((zipEntry = zipInputStream.getNextEntry()) != null){
@@ -67,7 +67,7 @@ public class ZipTest {
     @Test
     void zipXlsTest() throws Exception {
 
-        try (InputStream is = classLoader.getResourceAsStream("test.zip")) {
+        try (InputStream is = classLoader.getResourceAsStream("Test.zip")) {
             ZipInputStream zis = new ZipInputStream(is);
             ZipEntry entry;
             while ((entry = zis.getNextEntry()) != null) {
