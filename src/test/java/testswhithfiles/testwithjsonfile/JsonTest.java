@@ -1,6 +1,7 @@
 package testswhithfiles.testwithjsonfile;
 
-import com.google.gson.Gson;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.google.gson.internal.NonNullElementWrapperList;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -12,13 +13,15 @@ import java.io.InputStreamReader;
 public class JsonTest {
     @DisplayName("Проверяем содержимое JSON файла")
     @Test
-    void JsonTest() throws IOException {
+    void jsonTest() throws IOException {
         ClassLoader classLoader = JsonTest.class.getClassLoader();
-        Gson gson = new Gson();
+
+        ObjectMapper mapper = new ObjectMapper();
+
 
         try (InputStream is = classLoader.getResourceAsStream("Inoske.json");
              InputStreamReader inputStreamReader = new InputStreamReader(is)) {
-            Inoske inoske = gson.fromJson(inputStreamReader, Inoske.class);
+            Inoske inoske = mapper.readValue(inputStreamReader, Inoske.class);
             Assertions.assertEquals("bullterier", inoske.getBreed());
             Assertions.assertEquals("Inoske", inoske.getName());
             Assertions.assertEquals(1, inoske.getAge());
