@@ -1,11 +1,9 @@
 package testswhithallurereports.tests;
-
 import io.qameta.allure.*;
 import org.junit.jupiter.api.Test;
 import testswhithallurereports.pages.MainPage;
 import testswhithallurereports.pages.RepositoryPage;
 import testswhithallurereports.pages.SearchResultPage;
-
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$;
 import static io.qameta.allure.Allure.step;
