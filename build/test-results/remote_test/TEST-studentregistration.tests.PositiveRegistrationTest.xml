@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="studentregistration.tests.PositiveRegistrationTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-05-11T08:40:40" hostname="DESKTOP-IQVJM0R" time="34.181">
+  <properties/>
+  <testcase name="positiveFullRegistration()" classname="studentregistration.tests.PositiveRegistrationTest" time="34.181"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[Starting ChromeDriver 113.0.5672.63 (0e1a4471d5ae5bf128b1bd8f4d627c8cbd55f70c-refs/branch-heads/5672@{#912}) on port 14463
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully.
+мая 11, 2023 11:40:48 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 113, so returning the closest version found: 110
+]]></system-err>
+</testsuite>
