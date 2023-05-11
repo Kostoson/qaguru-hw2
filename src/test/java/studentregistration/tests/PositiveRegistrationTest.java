@@ -1,11 +1,12 @@
 package studentregistration.tests;
 
 import com.github.javafaker.Address;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import studentregistration.pages.StudentRegistrationPage;
 import studentregistration.utils.RandomUtil;
 
-
+@Tag("remote")
 public class PositiveRegistrationTest extends BaseClassStudentRegistration {
     StudentRegistrationPage studentRegistrationPage = new StudentRegistrationPage();
 
