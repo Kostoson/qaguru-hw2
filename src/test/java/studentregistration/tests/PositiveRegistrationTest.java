@@ -72,4 +72,4 @@ public class PositiveRegistrationTest extends BaseClassStudentRegistration {
     }
 
     }
-}
+
