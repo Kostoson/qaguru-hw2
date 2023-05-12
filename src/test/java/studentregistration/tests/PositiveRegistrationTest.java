@@ -1,8 +1,12 @@
 package studentregistration.tests;
+
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import studentregistration.pages.StudentRegistrationPage;
 import studentregistration.utils.RandomUtil;
+
+import static io.qameta.allure.Allure.step;
 
 
 public class PositiveRegistrationTest extends BaseClassStudentRegistration {
@@ -26,38 +30,46 @@ public class PositiveRegistrationTest extends BaseClassStudentRegistration {
             address = randomUtil.getRandomAddress();
 
 
-    @Tag("remote")
     @Test
+    @Tag("remote")
+    @DisplayName("Успешная регистрация")
     void positiveFullRegistration() {
 
-        studentRegistrationPage
-                .openPage()
-                .closingBanners()
-                .setFirstName(firstName)
-                .setLastName(lastName)
-                .setEmail(email)
-                .setGender(gender)
-                .setPhoneNumber(phoneNumber)
-                .setBirthdayDate(day, month, year)
-                .setSubject(subject)
-                .setHobby(hobby)
-                .uploadPicture(picture)
-                .setAddress(String.valueOf(address))
-                .setStateCity(state)
-                .setCity(city)
-                .submitButtonClick();
-
-        studentRegistrationPage.verifyRegistrationModalAppear()
-                .tableVerifyResultAppears("Student Name", firstName + " " + lastName)
-                .tableVerifyResultAppears("Student Email", email)
-                .tableVerifyResultAppears("Gender", gender)
-                .tableVerifyResultAppears("Mobile", phoneNumber)
-                .tableVerifyResultAppears("Date of Birth", day +" " + month + "," + year)
-                .tableVerifyResultAppears("Subjects", subject)
-                .tableVerifyResultAppears("Hobbies", hobby)
-                .tableVerifyResultAppears("Picture", "im.png")
-                .tableVerifyResultAppears("Address", String.valueOf(address))
-                .tableVerifyResultAppears("State and City", state + " " + city);
+        step("Открыть форму", () -> {
+            studentRegistrationPage
+                    .openPage()
+                    .closingBanners();
+        });
+       step("Заполнить форму", () -> {
+                   studentRegistrationPage
+                           .setFirstName(firstName)
+                           .setLastName(lastName)
+                           .setEmail(email)
+                           .setGender(gender)
+                           .setPhoneNumber(phoneNumber)
+                           .setBirthdayDate(day, month, year)
+                           .setSubject(subject)
+                           .setHobby(hobby)
+                           .uploadPicture(picture)
+                           .setAddress(String.valueOf(address))
+                           .setStateCity(state)
+                           .setCity(city)
+                           .submitButtonClick();
+               });
+        step("Проверить результат", () ->{
+            studentRegistrationPage.verifyRegistrationModalAppear()
+                    .tableVerifyResultAppears("Student Name", firstName + " " + lastName)
+                    .tableVerifyResultAppears("Student Email", email)
+                    .tableVerifyResultAppears("Gender", gender)
+                    .tableVerifyResultAppears("Mobile", phoneNumber)
+                    .tableVerifyResultAppears("Date of Birth", day + " " + month + "," + year)
+                    .tableVerifyResultAppears("Subjects", subject)
+                    .tableVerifyResultAppears("Hobbies", hobby)
+                    .tableVerifyResultAppears("Picture", "im.png")
+                    .tableVerifyResultAppears("Address", String.valueOf(address))
+                    .tableVerifyResultAppears("State and City", state + " " + city);
+        });
+    }
 
     }
 }
