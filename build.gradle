@@ -40,9 +40,9 @@ dependencies {
 
 }
 
-tasks.withType(JavaCompile) {
+tasks.withType(Test) {
     systemProperties(System.getProperties())
-    options.encoding = 'UTF-8'
+
 }
 
 test {
