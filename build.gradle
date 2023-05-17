@@ -41,6 +41,7 @@ dependencies {
 }
 
 tasks.withType(JavaCompile) {
+    systemProperties(System.getProperties())
     options.encoding = 'UTF-8'
 }
 
