@@ -22,8 +22,10 @@ public class BaseClassStudentRegistration {
     static void beforeAll() {
         Configuration.remote = System.getProperty("remote");
         Configuration.baseUrl = System.getProperty("baseUrl");
-        Configuration.browser = System.getProperty("browser");
         Configuration.browserSize = System.getProperty("browserSize");
+        String[] browser = System.getProperty("browser").split(":");
+        Configuration.browser = browser[0];
+        Configuration.browserVersion = browser[1];
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("selenoid:options", Map.<String, Object>of(
