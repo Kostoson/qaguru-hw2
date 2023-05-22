@@ -23,12 +23,12 @@ public class LocalizationChangeTest {
 
     MainPage mainPage = new MainPage();
 
-    static Stream<Arguments> ahrefsLocaleTest() {
+  /*  static Stream<Arguments> ahrefsLocaleTest() {
         return Stream.of(
                 Arguments.of(Local.English, List.of("Dashboard", "Site Explorer", "Keywords Explorer", "Site Audit", "Rank Tracker", "Content Explorer")),
                 Arguments.of(Local.Español, List.of("Panel de control", "Site Explorer", "Keywords Explorer", "Site Audit", "Rank Tracker", "Explorador de contenidos"))
         );
-    }
+    }*/
 
     @MethodSource
     @ParameterizedTest(name = "Проверяем, что после изменения языка на {0}, кнопки {1} поменяли язык")

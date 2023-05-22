@@ -1,0 +1,12 @@
+{
+  "uuid": "0cac4251-481a-489c-8e7b-29c4658027a1",
+  "name": "AlfaBankSearchTest",
+  "children": [
+    "a78af1c4-d72d-42bc-9d17-39ab76580e44",
+    "96ab6572-b876-468f-a180-1360f3fcb984"
+  ],
+  "befores": [],
+  "afters": [],
+  "start": 1684320150770,
+  "stop": 1684320183072
+}
