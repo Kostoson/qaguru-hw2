@@ -27,6 +27,7 @@ public class BaseClassStudentRegistration {
         Configuration.browser = browser[0];
         Configuration.browserVersion = browser[1];
 
+
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("selenoid:options", Map.<String, Object>of(
                 "enableVNC", true, //чтобы отображалось в селенейде, что внутри просиходит
