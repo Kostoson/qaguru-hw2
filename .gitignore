@@ -27,4 +27,3 @@ hs_err_pid*
 /.gradle
 build/reports
 notifications/draft.txt
-notifications/allure-notifications-4.2.1.jar
