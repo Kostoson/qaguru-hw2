@@ -1,7 +1,6 @@
 plugins {
     id 'java-library'
     id 'io.qameta.allure' version '2.11.2'
-
 }
 
 
@@ -43,6 +42,7 @@ tasks.withType(Test) {
     systemProperties(System.getProperties())
 
 }
+
 tasks.withType(JavaCompile) {
     options.encoding = 'UTF-8'
 }

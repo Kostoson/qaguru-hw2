@@ -1,43 +1,51 @@
 package parameterizetests.ahrefs.pages;
 
-import com.codeborne.selenide.CollectionCondition;
-import com.codeborne.selenide.ElementsCollection;
+
 import com.codeborne.selenide.SelenideElement;
-import parameterizetests.ahrefs.data.Local;
-
-import java.util.List;
-
 import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.$$;
+
 
 public class MainPage {
-    SelenideElement langIcon = $("svg.css-2o9aij-languageIcon"),
+    LesseesPage lesseesPage = new LesseesPage();
+    AboutCarcade aboutCarcade = new AboutCarcade();
 
-    toolsIcon = $("div.css-tidgun-label_");
-    ElementsCollection listLang = $$("a.css-19n52l5-menuItemLink"),
-            listTools = $$("a.css-19n52l5-menuItemLink");
+    SelenideElement catalogFilter = $("div.home_slider__filter").$("p.home_slider__title");
+    SelenideElement tabNew = $("div.home_slider__filter_tab");
+    SelenideElement tabWithMileage = $("div.home_slider__filter_tab").sibling(0);
+    SelenideElement lessees = $("div.header__column a.header__hover-link");
+    SelenideElement aboutCarcade = $("div.header__column a.header__hover-link").sibling(0);
 
 
-    public MainPage hoverOverTheLanguageSelectionIcon() {
-        langIcon.hover();
+
+
+
+
+    public MainPage catalogFilterHeader() {
+        catalogFilter.shouldHave(text("Каталог автомобилей"));
         return this;
     }
 
-    public MainPage languageSelection(Local lang) {
-        listLang.find(text(lang.name())).click();
-        return this;
-    }
-    public MainPage hoverOverTheListOfTools() {
-        toolsIcon.hover();
-        return this;
-    }
-    public MainPage toolsLanguageCheck(List<String> expectedButtons) {
-        listTools.filter(visible).shouldHave(CollectionCondition.texts(expectedButtons));
+    public MainPage catalogTabCheck() {
+        tabNew.shouldHave(text("новые"));
+        tabWithMileage.shouldHave(text("с пробегом"));
         return this;
     }
 
+    public MainPage headerPage() {
+        lessees.shouldHave(text("Лизингополучателям"));
+        aboutCarcade.shouldHave(text("О каркаде"));
+        return this;
+    }
 
+    public MainPage lesseesTab() {
+        lessees.click();
+        lesseesPage.checkWelcomeText();
+        return this;
+    }
 
+    public MainPage aboutCarcadeTab() {
+        aboutCarcade.checkAboutCarcade();
+        return this;
+    }
 }
